@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         addUI();
         addEvents();
-        mCredential = GMailModel.GACred(getApplicationContext());
     }
 
     private void addUI() {
