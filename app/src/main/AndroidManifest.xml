@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.ComposeActivity"></activity>
+        <activity android:name=".Activities.ComposeActivity" />
+        <activity android:name=".Activities.GetEmailActivity" />
     </application>
 
 </manifest>

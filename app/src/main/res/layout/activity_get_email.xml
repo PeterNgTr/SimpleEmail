@@ -7,33 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Activities.MainActivity">
+    tools:context="com.example.thanhnguyen.simpleemail.Activities.GetEmailActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search email"
-        android:id="@+id/mCallApiButton"
-        android:layout_alignParentTop="true"
+        android:text="Fetch Emails"
+        android:id="@+id/fetchEmails"
+        android:layout_below="@+id/query"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:id="@+id/mOutputText"
-        android:layout_alignLeft="@+id/mCallApiButton"
-        android:layout_alignStart="@+id/mCallApiButton"
-        android:layout_below="@+id/mCallApiButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Compose new email"
-        android:id="@+id/composeEmailButton"
+        android:id="@+id/query"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/mCallApiButton"
-        android:layout_toEndOf="@+id/mCallApiButton" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Type something to search..." />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailsList"
+        android:layout_below="@+id/fetchEmails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

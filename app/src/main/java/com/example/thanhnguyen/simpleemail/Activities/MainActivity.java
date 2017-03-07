@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 mCallApiButton.setEnabled(false);
                 mOutputText.setText("");
                 mCallApiButton.setEnabled(true);
+                Intent intent = new Intent(MainActivity.this, GetEmailActivity.class);
+                startActivity(intent);
             }
         });
 
