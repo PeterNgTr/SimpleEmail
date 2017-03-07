@@ -9,6 +9,12 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * Created by thanhnguyen on 3/5/17.
  */
@@ -38,5 +44,27 @@ public class Utilities {
 
     public static void showMessage(View view, String message) {
         Snackbar.make(view, message, Snackbar.LENGTH_LONG).show();
+    }
+
+    public static Map<String,String> parse(JSONObject json , Map<String,String> out) throws JSONException {
+        Iterator<String> keys = json.keys();
+        while(keys.hasNext()){
+            String key = keys.next();
+            String val = null;
+            if ( json.getJSONObject(key) instanceof JSONObject) {
+                JSONObject value = json.getJSONObject(key);
+                parse(value,out);
+            }
+
+            else {
+                val = json.getString(key);
+            }
+
+
+            if(val != null){
+                out.put(key,val);
+            }
+        }
+        return out;
     }
 }
